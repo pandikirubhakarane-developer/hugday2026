@@ -1,96 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 340 30% 8%;
+    --foreground: 30 50% 92%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 340 25% 12%;
+    --card-foreground: 30 50% 92%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 340 25% 12%;
+    --popover-foreground: 30 50% 92%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 340 70% 55%;
+    --primary-foreground: 30 50% 95%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 320 40% 20%;
+    --secondary-foreground: 30 50% 92%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 340 20% 15%;
+    --muted-foreground: 340 15% 60%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 30 80% 65%;
+    --accent-foreground: 340 30% 8%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 340 20% 20%;
+    --input: 340 20% 20%;
+    --ring: 340 70% 55%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* Romantic custom tokens */
+    --rose-glow: 340 80% 60%;
+    --gold-shimmer: 38 90% 65%;
+    --blush: 350 60% 75%;
+    --night-sky: 240 30% 10%;
+    --love-gradient: linear-gradient(135deg, hsl(340 80% 55%), hsl(320 60% 45%), hsl(280 50% 40%));
+    --gold-gradient: linear-gradient(135deg, hsl(38 90% 65%), hsl(30 80% 55%));
+    --text-glow: 0 0 20px hsl(340 80% 60% / 0.6), 0 0 40px hsl(340 80% 60% / 0.3);
+    --heart-shadow: 0 0 30px hsl(340 80% 55% / 0.4), 0 0 60px hsl(340 80% 55% / 0.2);
 
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 340 25% 10%;
+    --sidebar-foreground: 30 50% 92%;
+    --sidebar-primary: 340 70% 55%;
+    --sidebar-primary-foreground: 30 50% 95%;
+    --sidebar-accent: 320 40% 20%;
+    --sidebar-accent-foreground: 30 50% 92%;
+    --sidebar-border: 340 20% 20%;
+    --sidebar-ring: 340 70% 55%;
   }
 }
 
@@ -101,5 +64,74 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Cormorant Garamond', serif;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  .glow-text {
+    text-shadow: var(--text-glow);
+    animation: glow-pulse 3s ease-in-out infinite;
+  }
+
+  .love-gradient-bg {
+    background: var(--love-gradient);
+  }
+
+  .gold-gradient-bg {
+    background: var(--gold-gradient);
+  }
+
+  .heart-glow {
+    filter: drop-shadow(0 0 20px hsl(340 80% 55% / 0.5));
+  }
+
+  .romantic-glass {
+    background: hsl(340 25% 12% / 0.6);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(340 80% 60% / 0.15);
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    text-shadow: 0 0 20px hsl(340 80% 60% / 0.6), 0 0 40px hsl(340 80% 60% / 0.3);
+  }
+  50% {
+    text-shadow: 0 0 30px hsl(340 80% 60% / 0.8), 0 0 60px hsl(340 80% 60% / 0.5), 0 0 80px hsl(340 80% 60% / 0.2);
+  }
+}
+
+@keyframes float-heart {
+  0% {
+    transform: translateY(100vh) scale(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-10vh) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0; transform: scale(0); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+.floating-heart {
+  animation: float-heart var(--duration, 8s) ease-in-out var(--delay, 0s) infinite;
+}
+
+.sparkle {
+  animation: sparkle var(--duration, 2s) ease-in-out var(--delay, 0s) infinite;
 }
